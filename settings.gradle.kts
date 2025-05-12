@@ -5,4 +5,5 @@ plugins {
 
 rootProject.name = "twelve-steps-kafka-connect"
 
+include("kafka-consumer-spring-boot-jdbc")
 include("kafka-consumer-sprint-0")
