@@ -1,0 +1,18 @@
+{
+  "name": "JdbcSinkConnector_pizza_orders_auto_create",
+  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+  "tasks.max": "1",
+  "topics": "pizza_orders_3_partitions",
+  "connection.url": "jdbc:postgresql://postgres:5432/kafka_connect",
+  "connection.user": "kafka_connect_user",
+  "connection.password": "kafka_connect_password",
+  "insert.mode": "upsert",
+  "table.name.format": "kafka_${topic}",
+  "pk.mode": "kafka",
+  "pk.fields": "__connect_topic,__connect_partition,__connect_offset",
+  "auto.create": "true",
+  "auto.evolve": "true",
+  "transforms": "OrderLinesToJSON",
+  "transforms.OrderLinesToJSON.type": "jjug.kafka.connect.smt.StructArrayToJsonTransform",
+  "transforms.OrderLinesToJSON.arrayField": "order_lines"
+}

@@ -9,4 +9,5 @@ FROM confluentinc/cp-kafka-connect-base:7.6.0
 # - https://www.confluent.io/confluent-community-license-faq/
 # - https://stackoverflow.com/questions/61532385/kafka-dependencies-ccs-vs-ce
 
-RUN confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:0.6.5
+RUN confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:0.6.5 && \
+    confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:10.8.4
