@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "4eb28a95-a0f4-4215-9908-649029f41554",
+		"name": "Kafka Connect - 1 Connect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43004262"
+	},
+	"item": [
+		{
+			"name": "/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/connectors (info and status)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/connectors?expand=status&expand=info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "status"
+						},
+						{
+							"key": "expand",
+							"value": "info"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/connector-plugins",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/connector-plugins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connector-plugins"
+					],
+					"query": [
+						{
+							"key": "connectorsOnly",
+							"value": "false",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
