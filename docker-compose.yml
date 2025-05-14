@@ -66,7 +66,9 @@ services:
       retries: 3
 
   connect:
-    image: cnfldemos/kafka-connect-datagen:0.6.4-7.6.0
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: on-failure:3
     hostname: connect
     container_name: connect
