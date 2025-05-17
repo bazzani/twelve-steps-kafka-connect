@@ -1,0 +1,23 @@
+{
+  "name": "JdbcSinkConnector_pizza_orders",
+  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+  "tasks.max": "1",
+  "errors.tolerance": "none",
+  "topics": "pizza_orders",
+  "connection.url": "jdbc:postgresql://postgres:5432/kafka_connect",
+  "connection.user": "kafka_connect_user",
+  "connection.password": "kafka_connect_password",
+  "insert.mode": "upsert",
+  "batch.size": "10",
+  "table.name.format": "pizza_orders",
+  "pk.mode": "record_value",
+  "pk.fields": "store_id, store_order_id",
+  "fields.whitelist": "store_id, store_order_id, coupon_code, date, status, order_lines",
+  "auto.create": "false",
+  "auto.evolve": "false",
+  "max.retries": "0",
+  "retry.backoff.ms": "1000",
+  "transforms": "OrderLinesToJSON",
+  "transforms.OrderLinesToJSON.type": "jjug.kafka.connect.smt.StructArrayToJsonTransform",
+  "transforms.OrderLinesToJSON.arrayField": "order_lines"
+}
