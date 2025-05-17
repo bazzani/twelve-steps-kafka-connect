@@ -1,0 +1,7 @@
+{
+  "name": "DatagenConnector_pizza_orders",
+  "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
+  "kafka.topic": "pizza_orders",
+  "quickstart": "pizza_orders",
+  "tasks.max": "1"
+}
