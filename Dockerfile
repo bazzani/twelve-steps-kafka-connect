@@ -18,7 +18,17 @@ RUN microdnf install yum \
 USER appuser
 ###########################
 
+###    Install jq to be able to parse json files at startup  ###
+USER root
+RUN yum install jq -y
+USER appuser
+###########################
+
 RUN confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:0.6.5 && \
     confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:10.8.4
 
+COPY ./scripts/connect /connect-scripts
 COPY ./kafka-connect-smt-lib/build/libs/kafka-connect-smt-lib*.jar /usr/share/java/jjug/
+COPY ./connector-configs/connect /connect-connector-configs
+
+ENTRYPOINT ["sh","/connect-scripts/connect-entrypoint.sh"]
