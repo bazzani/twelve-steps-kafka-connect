@@ -3,6 +3,7 @@ plugins {
     id("org.springframework.boot") version "3.4.5"
     id("io.spring.dependency-management") version "1.1.7"
     id("io.freefair.lombok") version "8.6"
+    id("com.avast.gradle.docker-compose") version "0.17.12"
 }
 
 group = "jjug.kafka.connect"
@@ -40,6 +41,17 @@ dependencies {
 }
 
 tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+    dependsOn(tasks.named("composeUp"))
+    finalizedBy(tasks.named("composeDown"))
+}
+
+dockerCompose {
+    projectNamePrefix = "twelve-steps-kafka-connect-int-test"
+    startedServices = setOf("broker", "connect", "schema-registry", "postgres")
+
+    captureContainersOutputToFiles = project.layout.buildDirectory.dir("container-logs")
+    retainContainersOnStartupFailure = true
+
+    dockerExecutable = "/usr/local/bin/docker"
 }
