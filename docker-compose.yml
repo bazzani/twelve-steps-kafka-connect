@@ -78,6 +78,7 @@ services:
       - postgres
     ports:
       - "8083:8083"
+      - "8000:8000"
     environment:
       CONNECT_BOOTSTRAP_SERVERS: 'broker:29092'
       CONNECT_REST_ADVERTISED_HOST_NAME: connect
@@ -94,6 +95,8 @@ services:
       CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
       CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
       CONNECT_LOG4J_LOGGERS: "org.apache.kafka.connect.runtime.rest.RestServer=WARN"
+      CONNECT_LOG4J_APPENDER_STDOUT_LAYOUT_CONVERSIONPATTERN: "[%d] %p %X{connector.context} (%-60c) %m%n"
+      JAVA_TOOL_OPTIONS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000"
     healthcheck:
       test: if [ $(curl -s -o /dev/null -w %{http_code} http://localhost:8083/connectors) -ne 200 ]; then exit 1; fi
       interval: 30s
