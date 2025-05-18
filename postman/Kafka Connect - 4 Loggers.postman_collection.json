@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "c392979f-d733-4123-ba51-4e66a5ece92a",
+		"name": "Kafka Connect - 4 Loggers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43004262",
+		"_collection_link": "https://www.postman.com/telecoms-candidate-31669937/workspace/kafka-connect-twelve-steps/collection/43004262-c392979f-d733-4123-ba51-4e66a5ece92a?action=share&source=collection_link&creator=43004262"
+	},
+	"item": [
+		{
+			"name": "loggers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loggers WorkerSourceTask",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"org.apache.kafka.connect.runtime.WorkerSourceTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loggers WorkerSinkTask",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSinkTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"org.apache.kafka.connect.runtime.WorkerSinkTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "root - WARN",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": \"WARN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/root",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"root"
+					]
+				},
+				"description": "Generated from cURL: curl -s -X PUT -H \"Content-Type:application/json\" \\\nhttp://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask \\\n-d '{\"level\": \"TRACE\"}' | jq '.'"
+			},
+			"response": []
+		},
+		{
+			"name": "WorkerSourceTask - DEBUG",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": \"DEBUG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"org.apache.kafka.connect.runtime.WorkerSourceTask"
+					]
+				},
+				"description": "Generated from cURL: curl -s -X PUT -H \"Content-Type:application/json\" \\\nhttp://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask \\\n-d '{\"level\": \"TRACE\"}' | jq '.'"
+			},
+			"response": []
+		},
+		{
+			"name": "WorkerSinkTask - DEBUG",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": \"DEBUG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSinkTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"org.apache.kafka.connect.runtime.WorkerSinkTask"
+					]
+				},
+				"description": "Generated from cURL: curl -s -X PUT -H \"Content-Type:application/json\" \\\nhttp://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask \\\n-d '{\"level\": \"TRACE\"}' | jq '.'"
+			},
+			"response": []
+		},
+		{
+			"name": "JdbcSinkTask - DEBUG",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": \"DEBUG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/io.confluent.connect.jdbc.sink.JdbcSinkTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"io.confluent.connect.jdbc.sink.JdbcSinkTask"
+					]
+				},
+				"description": "Generated from cURL: curl -s -X PUT -H \"Content-Type:application/json\" \\\nhttp://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask \\\n-d '{\"level\": \"TRACE\"}' | jq '.'"
+			},
+			"response": []
+		},
+		{
+			"name": "JdbcSinkConnector - DEBUG",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": \"DEBUG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/io.confluent.connect.jdbc.JdbcSinkConnector",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"io.confluent.connect.jdbc.JdbcSinkConnector"
+					]
+				},
+				"description": "Generated from cURL: curl -s -X PUT -H \"Content-Type:application/json\" \\\nhttp://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask \\\n-d '{\"level\": \"TRACE\"}' | jq '.'"
+			},
+			"response": []
+		},
+		{
+			"name": "jdbc.sink - DEBUG",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": \"DEBUG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/io.confluent.connect.jdbc.sink",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"io.confluent.connect.jdbc.sink"
+					]
+				},
+				"description": "Generated from cURL: curl -s -X PUT -H \"Content-Type:application/json\" \\\nhttp://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask \\\n-d '{\"level\": \"TRACE\"}' | jq '.'"
+			},
+			"response": []
+		},
+		{
+			"name": "jdbc.util - DEBUG",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": \"DEBUG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/io.confluent.connect.jdbc.util",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"io.confluent.connect.jdbc.util"
+					]
+				},
+				"description": "Generated from cURL: curl -s -X PUT -H \"Content-Type:application/json\" \\\nhttp://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask \\\n-d '{\"level\": \"TRACE\"}' | jq '.'"
+			},
+			"response": []
+		},
+		{
+			"name": "jjug - DEBUG",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": \"DEBUG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/admin/loggers/jjug",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"admin",
+						"loggers",
+						"jjug"
+					]
+				},
+				"description": "Generated from cURL: curl -s -X PUT -H \"Content-Type:application/json\" \\\nhttp://localhost:8083/admin/loggers/org.apache.kafka.connect.runtime.WorkerSourceTask \\\n-d '{\"level\": \"TRACE\"}' | jq '.'"
+			},
+			"response": []
+		}
+	]
+}
