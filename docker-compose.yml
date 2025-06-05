@@ -148,3 +148,25 @@ services:
       interval: 10s
       timeout: 3s
       retries: 3
+
+  minio:
+    image: quay.io/minio/minio
+    container_name: minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    command:
+      - server
+      - /data
+    environment:
+      MINIO_ROOT_USER: kafka_connect_user
+      MINIO_ROOT_PASSWORD: kafka_connect_password
+      MINIO_CONSOLE_ADDRESS: ":9001"
+    volumes:
+      - ./minio/data:/data
+    healthcheck:
+      test: if [ $(curl -s -o /dev/null -w %{http_code} http://localhost:9001/) -ne 200 ]; then exit 1; fi
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3

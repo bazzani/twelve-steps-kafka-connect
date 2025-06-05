@@ -1,0 +1,19 @@
+{
+  "name": "S3SinkConnector_pizza_orders",
+  "connector.class": "io.confluent.connect.s3.S3SinkConnector",
+  "tasks.max": "1",
+  "topics": "pizza_orders",
+  "format.class": "io.confluent.connect.s3.format.avro.AvroFormat",
+  "flush.size": "64",
+  "schema.compatibility": "NONE",
+  "s3.bucket.name": "pizza-orders",
+  "s3.part.size": "5242880",
+  "aws.access.key.id": "kafka_connect_user",
+  "aws.secret.access.key": "kafka_connect_password",
+  "store.kafka.keys": "false",
+  "store.kafka.headers": "false",
+  "keys.format.class": "io.confluent.connect.s3.format.json.JsonFormat",
+  "headers.format.class": "io.confluent.connect.s3.format.json.JsonFormat",
+  "storage.class": "io.confluent.connect.s3.storage.S3Storage",
+  "store.url": "http://minio:9000"
+}
