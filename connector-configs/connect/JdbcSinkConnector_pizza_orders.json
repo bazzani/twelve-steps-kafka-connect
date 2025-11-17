@@ -24,5 +24,6 @@
   "retry.backoff.ms": "1000",
   "transforms": "OrderLinesToJSON",
   "transforms.OrderLinesToJSON.type": "jjug.kafka.connect.smt.StructArrayToJsonTransform",
-  "transforms.OrderLinesToJSON.arrayField": "order_lines"
+  "transforms.OrderLinesToJSON.arrayField": "order_lines",
+  "consumer.override.auto.offset.reset": "latest"
 }
